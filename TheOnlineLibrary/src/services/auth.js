@@ -1,4 +1,4 @@
-import { BASE_URL, fetchAndParse, headers } from "./utils";
+import { BASE_URL } from "./utils";
 
 export function login(data) {
     return fetchAndParse(`${BASE_URL}/auth/login`, {

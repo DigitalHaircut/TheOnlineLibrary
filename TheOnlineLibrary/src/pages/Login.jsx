@@ -5,6 +5,29 @@ import { useAuthContext } from "../contexts/auth/AuthContext";
 import { useForm } from "../hooks/useForm";
 
 export default function SignIn() {
+  const { user, login } = useAuthContext();
+  const navigate = useNavigate();
+  const { formValues, registerField } = useForm({
+    email: "",
+    password: "",
+  });
+
+  const [serverError, setServerError] = useState("");
+
+  function onSubmit(event) {
+    event.preventDefault();
+
+    setServerError("");
+
+    login(formValues)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        setServerError(error);
+      });
+  }
+
   return (
     <Box className="flexCenter" sx={{ mt: 12 }}>
       <Typography variant="h5">Sign In</Typography>

@@ -1,13 +1,19 @@
 import { Box, Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
-export default function () {
-return (
-    <Box>
-        <h1> AuthLayout.jsx </h1>
-        <Container>
-            <Outlet />
+export function AppLayout() {
+    return (
+      <Box className="layout-root">
+        <Container
+          maxWidth="lg"
+          sx={{
+            flexGrow: 1,
+            py: 4,
+          }}
+        >
+          <Outlet />
         </Container>
-    </Box>
-  );
-}
+      </Box>
+    );
+  }
+  
