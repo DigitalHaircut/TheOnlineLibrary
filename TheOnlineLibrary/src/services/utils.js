@@ -1,5 +1,9 @@
 export const BASE_URL = 'https://itschool-library.onrender.com'
 
+export const headers = {
+    "Content-Type": "application/json"
+}
+
 export function handleUpdate(token) {
     if (token) {
         headers.Authorization = `Bearer ${token}`;

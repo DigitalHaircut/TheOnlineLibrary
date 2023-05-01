@@ -1,17 +1,16 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import { login as loginService } from "../services/auth";
-import { handleTokenUpdate } from "../services/utils";
+import { handleUpdate } from "../services/utils";
 import { useLocalStorage } from "./useLocalStorage";
 
 const initialAuth = {
     user: null,
 }
 export function useAuth() {
-    // utilizatorul curent
     const [{ user, token }, setUser] = useLocalStorage("itschool-library-user", initialAuth);
 
     useLayoutEffect(() => {
-        handleTokenUpdate(token);
+        handleUpdate(token);
     }, [token]);
 
     async function login(credentials) {
