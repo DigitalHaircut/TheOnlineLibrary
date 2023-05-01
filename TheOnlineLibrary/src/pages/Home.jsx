@@ -1,7 +1,8 @@
 export default function () {
     return (
       <div>
-        <h1> Home page </h1>
+        <h3> Home page </h3>
+        <h1> The Online Library </h1>
       </div>
     );
   }
