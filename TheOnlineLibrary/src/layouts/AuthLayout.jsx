@@ -2,12 +2,12 @@ import { Box, Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 export default function () {
-return (
+    
+  return (
     <Box>
-        <h1> c </h1>
-        <Container>
-            <Outlet />
-        </Container>
+      <Container maxWidth="xs">
+        <Outlet />
+      </Container>
     </Box>
   );
 }
